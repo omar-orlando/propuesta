@@ -1,18 +1,19 @@
 import { ArrowRight, BriefcaseBusiness, HeartHandshake, Lightbulb, Target, Users } from "lucide-react"
 
 import { buttonVariants } from "@/components/ui/button"
+import { ThemeToggle } from "@/components/theme-toggle"
 import { cn } from "@/lib/utils"
 
 const roleMatches = [
   {
     task: "Evolucionar la experiencia digital con vision omnicanal",
-    done: "Trabaje experiencias web, desktop, mobile y aplicaciones, pensando recorridos completos y coherencia entre canales.",
-    how: "No lo pienso solo como pantallas. Lo trabajo como canales y contextos distintos: online, offline, corporativo y autogestion.",
+    done: "Trabaje experiencias web, desktop, mobile, aplicaciones y autogestion, pensando recorridos completos y coherencia entre canales.",
+    how: "No lo pienso solo como pantallas. Lo trabajo como canales y contextos distintos: online, offline, corporativo y autogestion, siempre con foco en el asociado.",
   },
   {
     task: "Traducir objetivos de negocio en iniciativas concretas",
     done: "Lidere proyectos end-to-end bajando objetivos generales a prioridades, soluciones implementables y mejoras medibles.",
-    how: "Conecto estrategia, discovery y delivery para transformar definiciones amplias en decisiones accionables para el equipo.",
+    how: "Conecto estrategia, discovery y delivery para transformar definiciones amplias en decisiones accionables, manteniendo foco en time-to-market.",
   },
   {
     task: "Articular con IT, Marketing y Unidades de Negocio",
@@ -22,24 +23,24 @@ const roleMatches = [
   {
     task: "Impulsar el uso de datos e inteligencia artificial",
     done: "Integre Hotjar, Clarity, Analytics, VWO e IA generativa para detectar fricciones, priorizar oportunidades y mejorar procesos.",
-    how: "Suelo acercar herramientas nuevas al equipo, impulsar su adopcion y proponer usos concretos con Codex, Claude, Notion AI y prototipos acelerados por IA.",
+    how: "Suelo acercar herramientas nuevas al equipo, impulsar su adopcion y proponer usos concretos con Codex, Claude, Notion AI y prototipos acelerados por IA para decidir con mas evidencia.",
   },
   {
     task: "Asegurar consistencia y eficiencia operativa",
     done: "Ademas de experiencia de usuario, participe en soluciones internas para mejorar eficiencia, visibilidad operativa y consistencia entre areas.",
-    how: "Para mi no alcanza con una buena idea si no llega a sprint, a release y a resultado. Las decisiones tienen que sostenerse en datos y en impacto real.",
+    how: "Para mi no alcanza con una buena idea si no llega a sprint, a release y a resultado. Las decisiones tienen que sostenerse en datos, impacto real y capacidad de ejecucion.",
   },
   {
-    task: "Disenar propuesta de valor y monitorear CX",
+    task: "Disenar propuesta de valor digital y monitorear CX",
     done: "Trabaje en la interseccion entre experiencia, negocio y operacion para que cada mejora digital tenga sentido para el usuario y para la organizacion.",
-    how: "Trabajo con foco constante en el usuario, pero siempre apoyado en comportamiento, friccion, adopcion y senales concretas para decidir mejor.",
+    how: "Trabajo con foco constante en propuesta de valor, ciclo de vida, friccion, adopcion, CX y senales concretas para decidir mejor.",
   },
 ]
 
 const evidenceCards = [
   {
     title: "Checkout y buscador con impacto real",
-    body: "Lidere mejoras en la experiencia de compra trabajando sobre fricciones del recorrido y con impacto en intencion de compra y abandono.",
+    body: "Lidere mejoras en la experiencia de compra reduciendo fricciones en checkout y mejorando la intencion de compra.",
   },
   {
     title: "Liderazgo UX con dual track",
@@ -47,20 +48,27 @@ const evidenceCards = [
   },
   {
     title: "Presentaciones ejecutivas",
-    body: "Presente vision, avances y decisiones de producto al CEO general del grupo para alinear negocio, roadmap e implementacion.",
+    body: "Presente vision, avances y decisiones de producto al CEO general del grupo para alinear decisiones de negocio, roadmap e implementacion.",
   },
   {
     title: "MultiOps como prueba de ejecucion",
-    body: "Impulse una herramienta interna para multiples areas, combinando diseno, producto, tecnologia e IA para mejorar eficiencia y visibilidad.",
+    body: "Impulse una herramienta interna para ventas, postventa, marketing y administracion, combinando diseno, producto, tecnologia e IA para mejorar eficiencia y visibilidad.",
   },
   {
     title: "Research, analitica y experimentacion",
-    body: "Integre herramientas de comportamiento y experimentacion para validar hipotesis y sostener decisiones con evidencia.",
+    body: "Integre herramientas de comportamiento y experimentacion para validar hipotesis, detectar fricciones y sostener decisiones con evidencia.",
   },
   {
     title: "Canales y contextos distintos",
     body: "Trabaje experiencias online, offline y corporativas, entendiendo que cada canal tiene necesidades, restricciones y expectativas propias.",
   },
+]
+
+const avalianNeeds = [
+  "Experiencias mas simples y consistentes entre canales y autogestion.",
+  "Mejor conexion entre negocio, producto, analitica y operacion.",
+  "Uso mas concreto de datos para detectar fricciones, personalizar y medir CX.",
+  "Mayor velocidad para llevar definiciones a producto real sin perder consistencia.",
 ]
 
 const workStyle = [
@@ -88,14 +96,14 @@ const workStyle = [
 
 export default function Page() {
   return (
-    <main className="min-h-svh overflow-x-hidden bg-[radial-gradient(circle_at_top_left,rgba(139,217,93,0.18),transparent_24%),radial-gradient(circle_at_88%_10%,rgba(15,159,114,0.12),transparent_18%),linear-gradient(180deg,#fcfffd_0%,#f4f9f6_100%)]">
+    <main className="min-h-svh overflow-x-hidden bg-[radial-gradient(circle_at_top_left,rgba(139,217,93,0.18),transparent_24%),radial-gradient(circle_at_88%_10%,rgba(15,159,114,0.12),transparent_18%),linear-gradient(180deg,#fcfffd_0%,#f4f9f6_100%)] dark:bg-[radial-gradient(circle_at_top_left,rgba(139,217,93,0.10),transparent_22%),radial-gradient(circle_at_88%_10%,rgba(15,159,114,0.09),transparent_18%),linear-gradient(180deg,#0f1714_0%,#13201c_100%)]">
       <div className="presentation-enter mx-auto h-svh w-full max-w-[1220px] px-4 py-4 sm:px-6 lg:px-8">
-        <section className="flex h-[calc(100svh-2rem)] flex-col overflow-hidden rounded-[2rem] border border-border/80 bg-white/95 shadow-[0_24px_90px_rgba(18,52,45,0.10)]">
+        <section className="flex h-[calc(100svh-2rem)] flex-col overflow-hidden rounded-[2rem] border border-border/80 bg-white/95 shadow-[0_24px_90px_rgba(18,52,45,0.10)] dark:bg-card/95 dark:shadow-[0_24px_90px_rgba(0,0,0,0.34)]">
           <header className="card-enter flex items-start justify-between gap-4 border-b border-border/70 px-5 py-5 sm:px-6 lg:px-7" style={{ ["--enter-delay" as string]: "60ms" }}>
             <div className="flex items-center gap-4">
               <div
                 aria-hidden="true"
-                className="relative flex size-13 shrink-0 items-center justify-center overflow-hidden rounded-[1.35rem] bg-white shadow-[inset_0_0_0_1px_rgba(18,54,45,0.10)]"
+                className="relative flex size-13 shrink-0 items-center justify-center overflow-hidden rounded-[1.35rem] bg-white shadow-[inset_0_0_0_1px_rgba(18,54,45,0.10)] dark:bg-background dark:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.08)]"
               >
                 <div className="absolute inset-x-0 top-0 h-[58%] bg-[#8bd95d]" />
                 <div className="absolute inset-x-0 bottom-0 h-[52%] rounded-t-[100%] bg-primary" />
@@ -111,8 +119,11 @@ export default function Page() {
               </div>
             </div>
 
-            <div className="hidden rounded-full border border-primary/20 bg-secondary px-3 py-1 text-xs font-semibold text-primary md:block">
-              One-page
+            <div className="flex items-center gap-2">
+              <div className="hidden rounded-full border border-primary/20 bg-secondary px-3 py-1 text-xs font-semibold text-primary md:block">
+                One-page
+              </div>
+              <ThemeToggle />
             </div>
           </header>
 
@@ -125,12 +136,12 @@ export default function Page() {
                 </div>
 
                 <div className="space-y-4">
-                  <h1 className="max-w-4xl text-4xl leading-none font-semibold tracking-[-0.055em] text-balance text-foreground sm:text-5xl xl:text-[3.5rem]">
-                    Mi aporte a Avalian.
+                  <h1 className="max-w-4xl text-4xl leading-none font-semibold tracking-[-0.055em] text-balance text-foreground sm:text-5xl xl:text-[3.35rem]">
+                    Como puedo ayudar a Avalian a construir experiencias mas simples, consistentes y valiosas.
                   </h1>
                 </div>
 
-                <div className="rounded-[1.5rem] border border-border/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(246,249,247,0.98))] px-5 py-4">
+                <div className="rounded-[1.5rem] border border-border/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(246,249,247,0.98))] px-5 py-4 dark:bg-[linear-gradient(180deg,rgba(28,40,35,0.96),rgba(22,32,28,0.96))]">
                   <p className="text-xs font-semibold tracking-[0.22em] text-primary uppercase">
                     Lo que me interesa de este rol
                   </p>
@@ -152,9 +163,20 @@ export default function Page() {
                     Ver como puedo aportar
                     <ArrowRight className="size-4" />
                   </a>
-                  {/* <p className="flex items-center text-sm text-foreground/62">
-                    Una sola columna, con scroll interno cuando haga falta.
-                  </p> */}
+                </div>
+              </section>
+
+              <section className="card-enter rounded-[1.55rem] border border-border/80 bg-secondary/35 px-5 py-5 dark:bg-secondary/10" style={{ ["--enter-delay" as string]: "140ms" }}>
+                <p className="text-xs font-semibold tracking-[0.22em] text-primary uppercase">
+                  Que creo que hoy necesita Avalian
+                </p>
+                <div className="mt-4 grid gap-3 md:grid-cols-2">
+                  {avalianNeeds.map((item) => (
+                    <div key={item} className="flex items-start gap-3">
+                      <div className="mt-2 size-2 shrink-0 rounded-full bg-primary" />
+                      <p className="text-sm leading-6 text-foreground/80">{item}</p>
+                    </div>
+                  ))}
                 </div>
               </section>
 
@@ -164,7 +186,7 @@ export default function Page() {
                     Evidencias concretas
                   </p>
                   <h2 className="mt-2 text-[1.7rem] leading-none font-semibold tracking-[-0.04em] text-foreground">
-                    Experiencias que ya dialoguean con el rol.
+                    Experiencias que ya dialogan con el rol.
                   </h2>
                 </div>
 
@@ -172,8 +194,8 @@ export default function Page() {
                   {evidenceCards.map((item, index) => (
                     <article
                       key={item.title}
-                      className="card-enter interactive-card rounded-[1.55rem] border border-border/80 bg-white p-5"
-                      style={{ ["--enter-delay" as string]: `${150 + index * 70}ms` }}
+                      className="card-enter interactive-card rounded-[1.55rem] border border-border/80 bg-white p-5 dark:bg-card"
+                      style={{ ["--enter-delay" as string]: `${170 + index * 65}ms` }}
                     >
                       <h3 className="text-[1.05rem] leading-tight font-semibold tracking-[-0.03em] text-foreground">
                         {item.title}
@@ -186,8 +208,8 @@ export default function Page() {
 
               <section
                 id="match"
-                className="card-enter scroll-mt-6 rounded-[1.7rem] border border-border/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(246,250,247,0.98))]"
-                style={{ ["--enter-delay" as string]: "220ms" }}
+                className="card-enter scroll-mt-6 rounded-[1.7rem] border border-border/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(246,250,247,0.98))] dark:bg-[linear-gradient(180deg,rgba(29,41,36,0.98),rgba(21,30,27,0.98))]"
+                style={{ ["--enter-delay" as string]: "230ms" }}
               >
                 <div className="border-b border-border/70 px-6 py-6">
                   <p className="text-xs font-semibold tracking-[0.22em] text-primary uppercase">
@@ -202,7 +224,7 @@ export default function Page() {
                   </p>
                 </div>
 
-                <div className="hidden border-b border-border/70 bg-secondary/20 lg:grid lg:grid-cols-[minmax(240px,0.3fr)_minmax(260px,0.35fr)_minmax(260px,0.35fr)]">
+                <div className="hidden border-b border-border/70 bg-secondary/20 dark:bg-secondary/10 lg:grid lg:grid-cols-[minmax(240px,0.3fr)_minmax(260px,0.35fr)_minmax(260px,0.35fr)]">
                   <div className="border-r border-border/70 px-6 py-4">
                     <p className="text-xs font-semibold tracking-[0.22em] text-primary uppercase">
                       Lo que pide el rol
@@ -255,14 +277,14 @@ export default function Page() {
 
               <section className="grid gap-6 xl:grid-cols-[minmax(280px,0.72fr)_minmax(520px,1.28fr)]">
                 <section
-                  className="card-enter rounded-[1.7rem] border border-border/80 bg-white p-6"
-                  style={{ ["--enter-delay" as string]: "280ms" }}
+                  className="card-enter rounded-[1.7rem] border border-border/80 bg-white p-6 dark:bg-card"
+                  style={{ ["--enter-delay" as string]: "300ms" }}
                 >
                   <p className="text-xs font-semibold tracking-[0.22em] text-primary uppercase">
-                    Mi forma de trabajar
+                    Como lidero y trabajo con equipos
                   </p>
                   <h2 className="mt-3 text-[1.7rem] leading-none font-semibold tracking-[-0.04em] text-foreground">
-                    Valor humano.
+                    Mi forma de trabajar.
                   </h2>
 
                   <div className="mt-6 space-y-4">
@@ -287,8 +309,8 @@ export default function Page() {
                 </section>
 
                 <section
-                  className="card-enter rounded-[1.7rem] border border-border/80 bg-[linear-gradient(135deg,rgba(139,217,93,0.14),rgba(255,255,255,0.98)_28%,rgba(15,159,114,0.08)_100%)] p-6"
-                  style={{ ["--enter-delay" as string]: "340ms" }}
+                  className="card-enter rounded-[1.7rem] border border-border/80 bg-[linear-gradient(135deg,rgba(139,217,93,0.14),rgba(255,255,255,0.98)_28%,rgba(15,159,114,0.08)_100%)] p-6 dark:bg-[linear-gradient(135deg,rgba(139,217,93,0.08),rgba(28,39,35,0.98)_28%,rgba(15,159,114,0.07)_100%)]"
+                  style={{ ["--enter-delay" as string]: "360ms" }}
                 >
                   <p className="text-xs font-semibold tracking-[0.22em] text-primary uppercase">
                     Cierre

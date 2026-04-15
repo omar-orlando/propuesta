@@ -23,7 +23,7 @@ export default function RootLayout({
       className={cn("antialiased", fontMono.variable, "font-sans", manrope.variable)}
     >
       <body>
-        <ThemeProvider forcedTheme="light">{children}</ThemeProvider>
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   )
